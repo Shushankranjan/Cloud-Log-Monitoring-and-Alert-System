@@ -1,0 +1,41 @@
+services:
+  localstack:
+    image: localstack/localstack:3.8.1
+    container_name: localstack-log-monitor
+    privileged: true
+    group_add:
+      - "969"
+    ports:
+      - "127.0.0.1:4566:4566"
+    environment:
+      - SERVICES=lambda,cloudwatch,logs,sns,iam,ses
+      - DEFAULT_REGION=us-east-1
+      - LOCALSTACK_HOST=localhost
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LAMBDA_REMOVE_CONTAINERS=1
+      - LAMBDA_DOCKER_NETWORK=localstack
+      - DEBUG=1
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:z"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:4566/_localstack/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - localstack
+
+  mock-slack:
+    image: python:3.11-slim
+    container_name: mock-slack
+    command: ["python", "/app/mock_slack_server.py", "8080"]
+    ports:
+      - "127.0.0.1:8081:8080"
+    volumes:
+      - "./scripts/mock_slack_server.py:/app/mock_slack_server.py:ro,z"
+    networks:
+      - localstack
+
+networks:
+  localstack:
+    name: localstack

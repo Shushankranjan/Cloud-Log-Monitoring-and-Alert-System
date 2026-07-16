@@ -1,0 +1,13 @@
+# Copy this file to terraform.tfvars and fill in your values.
+# terraform.tfvars is gitignored because it may contain secrets.
+
+project_name      = "cloud-log-monitor"
+environment       = "dev"
+aws_region        = "us-east-1"
+alert_email       = "ops@example.com"
+slack_webhook_url = "https://hooks.slack.com/services/..."
+
+# Optional overrides
+# error_threshold    = 5
+# error_period       = 300
+# log_retention_days = 14

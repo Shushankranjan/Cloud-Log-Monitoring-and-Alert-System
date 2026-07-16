@@ -1,0 +1,28 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+!terraform/terraform.tfvars.example
+# .terraform.lock.hcl should be committed to lock provider versions
+
+# Lambda packages
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# LocalStack
+localstack-data/
+localstack_providers_override.tf
+.terraform-local/
