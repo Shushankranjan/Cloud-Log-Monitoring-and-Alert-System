@@ -4,8 +4,6 @@ A lightweight, AWS-native monitoring stack that watches application logs, alerts
 
 Built with **CloudWatch Logs**, **CloudWatch Metric Filters**, **CloudWatch Alarms**, **SNS**, and **Lambda**.
 
-![Architecture](docs/ARCHITECTURE.md)
-
 ## What It Does
 
 - **Collects structured logs** from a sample serverless Lambda app.
@@ -37,6 +35,8 @@ For more details, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/PRD
 
 ```
 .
+├── assets/
+│   └── screenshots/        # UI screenshots for README
 ├── docs/
 │   ├── PRD.md              # Product Requirements Document
 │   └── ARCHITECTURE.md     # System architecture
@@ -136,6 +136,15 @@ nohup .venv/bin/python scripts/dashboard.py > /tmp/dashboard.log 2>&1 &
 Open http://localhost:8080.
 
 The page auto-refreshes every 10 seconds.
+
+## Screenshots
+
+Add your dashboard screenshots to [`assets/screenshots/`](assets/screenshots/) and reference them below:
+
+| State | Preview |
+|---|---|
+| Dashboard OK | `assets/screenshots/dashboard-ok.png` |
+| Dashboard ALARM | `assets/screenshots/dashboard-alarm.png` |
 
 ## Test the Alarm
 
