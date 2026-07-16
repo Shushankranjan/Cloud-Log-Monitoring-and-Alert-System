@@ -4,6 +4,8 @@ A lightweight, AWS-native monitoring stack that watches application logs, alerts
 
 Built with **CloudWatch Logs**, **CloudWatch Metric Filters**, **CloudWatch Alarms**, **SNS**, and **Lambda**.
 
+![High-level Architecture](assets/screenshots/High-level-architecture.png)
+
 ## What It Does
 
 - **Collects structured logs** from a sample serverless Lambda app.
@@ -139,12 +141,13 @@ The page auto-refreshes every 10 seconds.
 
 ## Screenshots
 
-Add your dashboard screenshots to [`assets/screenshots/`](assets/screenshots/) and reference them below:
+### Dashboard — OK State
 
-| State | Preview |
-|---|---|
-| Dashboard OK | `assets/screenshots/dashboard-ok.png` |
-| Dashboard ALARM | `assets/screenshots/dashboard-alarm.png` |
+![Dashboard OK](assets/screenshots/dashboard-ok.png)
+
+### Dashboard — ALARM State
+
+![Dashboard ALARM](assets/screenshots/dashboard-alarm.png)
 
 ## Test the Alarm
 
